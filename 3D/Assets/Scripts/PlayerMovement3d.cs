@@ -7,8 +7,8 @@ public class PlayerMovement3d : MonoBehaviour
     public float movespeed = 15f;
 
     public Rigidbody rb;
-    Vector3 movement;
-    Vector3 rotation;
+    public Vector3 movement;
+    public Vector3 rotation;
     private float x, y;
 
     void Update() {
