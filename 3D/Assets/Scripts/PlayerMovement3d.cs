@@ -9,7 +9,7 @@ public class PlayerMovement3d : MonoBehaviour
     public Rigidbody rb;
     Vector3 movement;
     Vector3 rotation;
-    float x, y;
+    private float x, y;
 
     void Update() {
         //Input
