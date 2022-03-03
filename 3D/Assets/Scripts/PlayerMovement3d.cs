@@ -24,6 +24,6 @@ public class PlayerMovement3d : MonoBehaviour
         //Movement
         rb.MovePosition(rb.position + movement * movespeed * Time.deltaTime);
         //rb.AddForce(rb.position + movement * movespeed * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation.x, rotation.y, rotation.z));
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, rotation.y, 0f));
     }
 }
