@@ -5,18 +5,16 @@ public class TankMovement : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
     public float m_Speed = 30f;
-    public float m_TurnSpeed = 180f;
-    public float m_PitchRange = 0.2f;
-    /*public AudioSource m_MovementAudio;
-    public AudioClip m_EngineIdle;
-    public AudioClip m_EngineDrive;*/
+    public float m_TurnSpeed = 180f;   
 
     private string m_MovementAxisName;
     private string m_TurnAxisName;
-    private float m_MovementInputValue;
+    protected float m_MovementInputValue;
     private float m_TurnInputValue;
-    private float m_OriginalPitch;
     private Rigidbody m_Rigidbody;
+
+    //TODO: Getter setter for the audio variables
+    //and try out character controller
 
     private void Awake() {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -34,33 +32,14 @@ public class TankMovement : MonoBehaviour
 
     private void Start() {
         m_MovementAxisName = "Vertical" + m_PlayerNumber; //different virtual axis for different players
-        m_TurnAxisName = "Horizontal" + m_PlayerNumber;
-        //m_OriginalPitch = m_MovementAudio.pitch;
+        m_TurnAxisName = "Horizontal" + m_PlayerNumber;       
     }
 
     private void Update() {
         //Getting input
         m_MovementInputValue = Input.GetAxisRaw(m_MovementAxisName);
         m_TurnInputValue = Input.GetAxisRaw(m_TurnAxisName);
-
-    }
-
-    /*private void EngineAudio() {
-        //for audio playing
-        if(Mathf.Abs(m_MovementInputValue) < 0.1f && Mathf.Abs(m_TurnInputValue) < 0.1f) {  //if tank is not moving
-            if(m_MovementAudio.clip == m_EngineDrive) {
-                m_MovementAudio.clip = m_EngineIdle;
-                m_MovementAudio.pitch = Random.Range(m_OriginalPitch - m_PitchRange, m_OriginalPitch + m_PitchRange);
-                m_MovementAudio.Play();
-            }
-        } else {
-            if (m_MovementAudio.clip == m_EngineIdle) {
-                m_MovementAudio.clip = m_EngineDrive;
-                m_MovementAudio.pitch = Random.Range(m_OriginalPitch - m_PitchRange, m_OriginalPitch + m_PitchRange);
-                m_MovementAudio.Play();
-            }
-        }
-    }*/
+    }   
 
     private void FixedUpdate() {
         //Moving the tank
