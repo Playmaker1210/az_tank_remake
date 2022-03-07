@@ -36,7 +36,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical1
     descriptiveName: 
@@ -68,7 +68,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Fire1
     descriptiveName: 
@@ -85,6 +85,22 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 1
+  - serializedVersion: 3
+    m_Name: Fire2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: z
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Mouse X
     descriptiveName: 
