@@ -12,9 +12,20 @@ public class TankMovement : MonoBehaviour
     protected float m_MovementInputValue;
     private float m_TurnInputValue;
     private Rigidbody m_Rigidbody;
+    Vector3 movement;
 
-    //TODO: Getter setter for the audio variables
-    //and try out character controller
+    public CharacterController controller;
+
+    //TODO:
+    //try out character controller
+
+    //getter for the audio
+    public float getMovementInputValue() {
+        return m_MovementInputValue;
+    }
+    public float getTurnInputValue() {
+        return m_TurnInputValue;
+    }
 
     private void Awake() {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -49,15 +60,17 @@ public class TankMovement : MonoBehaviour
 
     private void Move() {
         //forward and backwards movement
-        Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
-        m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+        movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
+        //m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+        controller.Move(movement.normalized);
     }
 
     private void Turn() {
         //left or right rotation
         float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+        //transform.rotation = Quaternion.Euler(0f, turn  * m_TurnSpeed, 0f);
+        //transform.Rotate(0f, turn * m_TurnSpeed, 0f);
     }
 }
