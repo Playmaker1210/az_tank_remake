@@ -62,7 +62,7 @@ public class TankMovement : MonoBehaviour
         //forward and backwards movement
         movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
         //m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
-        controller.Move(movement.normalized);
+        controller.Move(movement);
     }
 
     private void Turn() {
