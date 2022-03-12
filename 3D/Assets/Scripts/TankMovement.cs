@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class TankMovement : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
-    public float m_Speed = 30f;
+    public float m_Speed = 150f;
     public float m_TurnSpeed = 180f;   
 
     private string m_MovementAxisName;
@@ -12,12 +11,9 @@ public class TankMovement : MonoBehaviour
     protected float m_MovementInputValue;
     private float m_TurnInputValue;
     private Rigidbody m_Rigidbody;
-    Vector3 movement;
+    private Vector3 movement;
 
     public CharacterController controller;
-
-    //TODO:
-    //try out character controller
 
     //getter for the audio
     public float getMovementInputValue() {
